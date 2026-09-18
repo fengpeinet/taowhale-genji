@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="description" content="《AI設計師研修班》線上課說明會，零成本報名，立刻搶佔名額！" /><!-- TODO：課程/活動名稱待定，先用鯨海拾貝課程名佔位 -->
+  <title>《AI設計師研修班》說明會 · 風霈學院</title><!-- TODO：確認活動對外名稱 -->
+
+  <!-- TODO：以下 GA4 / Meta Pixel 是舊「蝦皮AI攻略班」專案的追蹤 ID，廈門AI課要用新的 ID，
+       申請好之前先整段保持註解，避免這次的流量誤算進舊活動的成效報表 -->
+  <!--
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  <script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init','XXXXXXXXXXXXXXX');
+  fbq('track','PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"/></noscript>
+  -->
+  <!-- 頁面下方的 Meta Pixel 滾動追蹤 script（fbq('track','ViewContent') 等）也要等上面這段打開才會生效，先保留不用動 -->
+
+  <style>
+    /* ─── Reset ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      background: #ffffff;
+      color: #0f172a;
+      font-family: -apple-system, "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { display: block; width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ─── Layout wrapper ─── */
+    .page {
+      width: 100%;
+      max-width: 480px;
+      margin: 0 auto;
+      background: #ffffff;
+      position: relative;
+    }
+
+    @media (max-width: 480px) {
+      .page {
+        max-width: 100%;
+      }
+    }
+
+    /* ═══════════════════════════════
+       HERO
+       ═══════════════════════════════ */
+    .hero {
+      background: #ffffff;
+      padding: 28px 20px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-brand {
+      font-size: 11px;
+      color: #64748b;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 4px;
+      padding: 5px 12px;
+      margin-bottom: 18px;
+    }
+    .hero-badge-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: #f97316;
+      flex-shrink: 0;
+    }
+    .hero-badge-text {
+      font-size: 13px;
+      color: #1d4ed8;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+    }
+    .hero-title-small {
+      font-size: 16px;
+      color: #64748b;
+      font-weight: 400;
+      margin-bottom: 4px;
+    }
+    .hero-title-main {
+      font-size: 36px;
+      font-weight: 900;
+      color: #0f172a;
+      line-height: 1.15;
+      margin-bottom: 8px;
+      letter-spacing: -0.01em;
+    }
+    .hero-event-name {
+      font-size: 20px;
+      font-weight: 700;
+      color: #2563eb;
+      line-height: 1.3;
+      margin-bottom: 14px;
+    }
+    .hero-sub {
+      font-size: 15px;
+      color: #64748b;
+      margin-bottom: 18px;
+      line-height: 1.7;
+    }
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 22px;
+    }
+    .hero-tag {
+      font-size: 13px;
+      color: #1d4ed8;
+      background: #eff6ff;
+      border: 0.5px solid #bfdbfe;
+      border-radius: 20px;
+      padding: 4px 10px;
+    }
+    .hero-cta {
+      display: block;
+      background: #f97316;
+      color: #ffffff;
+      font-size: 17px;
+      font-weight: 800;
+      text-align: center;
+      padding: 15px 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      letter-spacing: 0.03em;
+      transition: opacity 0.15s;
+    }
+    .hero-cta:hover { opacity: 0.88; }
+
+    /* ─── Countdown ─── */
+    .countdown-bar {
+      background: #f0f7ff;
+      border-top: 1px solid #bfdbfe;
+      border-bottom: 1px solid #bfdbfe;
+      padding: 24px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+    .countdown-label {
+      font-size: 14px;
+      color: #64748b;
+      letter-spacing: 0.06em;
+    }
+    .countdown-digits {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .cd-block { text-align: center; }
+    .cd-num {
+      font-size: 52px;
+      font-weight: 800;
+      color: #2563eb;
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+      display: block;
+      min-width: 2ch;
+    }
+    .cd-lbl {
+      font-size: 14px;
+      color: #94a3b8;
+      display: block;
+      margin-top: 4px;
+    }
+    .cd-sep {
+      font-size: 48px;
+      font-weight: 800;
+      color: #93c5fd;
+      margin-bottom: 22px;
+      align-self: flex-start;
+    }
+    .countdown-ended {
+      font-size: 14px;
+      color: #2563eb;
+      font-weight: 600;
+      text-align: center;
+      width: 100%;
+    }
+
+    /* ═══════════════════════════════
+       IMAGE STRIPS
+       ═══════════════════════════════ */
+    .strip { display: block; width: 100%; background-color: #ffffff; }
+    .section-gap { display: none; }
+
+    /* ─── Mid CTA ─── */
+    .mid-cta-wrap {
+      background: #ffffff;
+      padding: 16px 20px;
+      border-top: 2px solid #f97316;
+    }
+    .mid-cta-label {
+      font-size: 13px;
+      color: #94a3b8;
+      text-align: center;
+      margin-bottom: 10px;
+      letter-spacing: 0.04em;
+    }
+    .mid-cta-btn {
+      display: block;
+      background: #f97316;
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 800;
+      text-align: center;
+      padding: 13px 20px;
+      border-radius: 8px;
+      letter-spacing: 0.03em;
+      transition: opacity 0.15s;
+    }
+    .mid-cta-btn:hover { opacity: 0.88; }
+
+    /* ═══════════════════════════════
+       VIDEO
+       ═══════════════════════════════ */
+    .video-section {
+      background: #f8faff;
+      padding: 20px 20px 4px;
+      border-top: 0.5px solid #e2eaf8;
+    }
+    .video-label {
+      font-size: 13px;
+      color: #64748b;
+      letter-spacing: 0.1em;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    .video-wrap {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .video-wrap iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: none;
+    }
+
+    /* ═══════════════════════════════
+       FORM
+       ═══════════════════════════════ */
+    .form-section {
+      background: #ffffff;
+      padding: 28px 20px 32px;
+      border-top: 2px solid #2563eb;
+    }
+    .form-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #eff6ff;
+      border: 0.5px solid #bfdbfe;
+      border-radius: 20px;
+      padding: 5px 14px;
+      margin-bottom: 12px;
+    }
+    .form-eyebrow span {
+      font-size: 12px;
+      color: #1d4ed8;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+    }
+    .form-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: #2563eb;
+      margin-bottom: 6px;
+    }
+    .form-subtitle {
+      font-size: 15px;
+      color: #64748b;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+    .form-group { margin-bottom: 14px; }
+    .form-label {
+      font-size: 13px;
+      color: #64748b;
+      margin-bottom: 6px;
+      display: block;
+      letter-spacing: 0.04em;
+    }
+    .form-label .req { color: #f97316; margin-left: 2px; }
+    .form-input {
+      width: 100%;
+      background: #f8faff;
+      border: 1px solid #e2eaf8;
+      border-radius: 6px;
+      padding: 12px 14px;
+      font-size: 15px;
+      color: #0f172a;
+      outline: none;
+      transition: border-color 0.15s;
+      font-family: inherit;
+      -webkit-appearance: none;
+    }
+    .form-input::placeholder { color: #94a3b8; }
+    .form-input:focus { border-color: #93c5fd; }
+
+    /* session radio */
+    .session-label {
+      font-size: 13px;
+      color: #64748b;
+      margin-bottom: 8px;
+      display: block;
+      letter-spacing: 0.04em;
+    }
+    .session-label .req { color: #f97316; margin-left: 2px; }
+    .session-options { display: flex; flex-direction: column; gap: 8px; }
+    .session-option { display: none; }
+    .session-option-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #f8faff;
+      border: 1px solid #e2eaf8;
+      border-radius: 6px;
+      padding: 13px 14px;
+      cursor: pointer;
+      transition: border-color 0.15s, background 0.15s;
+      font-size: 15px;
+      color: #64748b;
+    }
+    .session-option:checked + .session-option-label {
+      border-color: #93c5fd;
+      background: #eff6ff;
+      color: #1d4ed8;
+    }
+    .session-radio-dot {
+      width: 16px; height: 16px;
+      border-radius: 50%;
+      border: 1.5px solid #bfdbfe;
+      flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      transition: border-color 0.15s;
+    }
+    .session-option:checked + .session-option-label .session-radio-dot {
+      border-color: #2563eb;
+      background: rgba(37,99,235,0.1);
+    }
+    .session-radio-inner {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: #2563eb;
+      opacity: 0;
+      transition: opacity 0.15s;
+    }
+    .session-option:checked + .session-option-label .session-radio-inner { opacity: 1; }
+    #s-no:checked + .session-option-label--no {
+      border-color: #fdba74;
+      background: #fff7ed;
+      color: #c2410c;
+    }
+    #s-no:checked + .session-option-label--no .session-radio-dot {
+      border-color: #f97316;
+      background: rgba(249,115,22,0.1);
+    }
+    #s-no:checked + .session-option-label--no .session-radio-inner {
+      background: #f97316;
+    }
+
+    /* no-session panel */
+    .no-session-panel {
+      display: none;
+      margin-top: 12px;
+      background: #ffffff;
+      border: 1px solid #e2eaf8;
+      border-top: 3px solid #f97316;
+      border-radius: 8px;
+      padding: 18px 16px 16px;
+    }
+    .no-session-panel.show { display: block; }
+    .no-session-title {
+      font-size: 15px;
+      color: #0f172a;
+      font-weight: 800;
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+    .no-session-steps {
+      font-size: 13px;
+      color: #64748b;
+      margin-bottom: 14px;
+      line-height: 2;
+    }
+    .copy-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #f8faff;
+      border: 1px solid #bfdbfe;
+      border-radius: 6px;
+      padding: 12px 14px;
+      margin-bottom: 12px;
+    }
+    .copy-text {
+      flex: 1;
+      font-size: 14px;
+      color: #0f172a;
+      font-weight: 700;
+    }
+    .copy-btn {
+      background: #f97316;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      border: none;
+      border-radius: 5px;
+      padding: 8px 14px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: opacity 0.15s;
+      font-family: inherit;
+    }
+    .copy-btn:hover { opacity: 0.85; }
+    .no-session-line-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: #06C755;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 13px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: opacity 0.15s;
+    }
+    .no-session-line-btn:hover { opacity: 0.88; }
+
+    .form-submit {
+      display: block;
+      width: 100%;
+      background: #2563eb;
+      color: #ffffff;
+      font-size: 17px;
+      font-weight: 800;
+      text-align: center;
+      padding: 15px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      margin-top: 20px;
+      letter-spacing: 0.03em;
+      font-family: inherit;
+      transition: opacity 0.15s;
+    }
+    .form-submit:hover { opacity: 0.88; }
+    .form-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+
+    .form-privacy {
+      font-size: 11px;
+      color: #cbd5e1;
+      text-align: center;
+      margin-top: 10px;
+      line-height: 1.6;
+    }
+
+    /* success state */
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 20px 0;
+    }
+    .form-success.show { display: block; }
+    .success-icon {
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      background: #eff6ff;
+      border: 1.5px solid #bfdbfe;
+      color: #2563eb;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 14px;
+      font-size: 22px;
+    }
+    .success-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 6px;
+    }
+    .success-sub {
+      font-size: 12px;
+      color: #64748b;
+      margin-bottom: 18px;
+      line-height: 1.7;
+    }
+    .success-line-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #06C755;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 11px 22px;
+      border-radius: 8px;
+      margin-bottom: 14px;
+    }
+
+    /* ═══════════════════════════════
+       FOOTER
+       ═══════════════════════════════ */
+    .site-footer {
+      background: #f8faff;
+      padding: 20px 20px 100px;
+      border-top: 0.5px solid #e2eaf8;
+    }
+    .footer-brand {
+      font-size: 11px;
+      color: #94a3b8;
+      letter-spacing: 0.14em;
+      text-align: center;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+      cursor: default;
+    }
+    .footer-brand:hover { color: #2563eb; }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0;
+    }
+    .footer-link {
+      font-size: 12px;
+      color: #93c5fd;
+      transition: color 0.15s;
+    }
+    .footer-link:hover { color: #2563eb; }
+    .footer-link + .footer-link::before {
+      content: '｜';
+      margin: 0 6px;
+      color: #e2eaf8;
+      pointer-events: none;
+    }
+
+    /* ═══════════════════════════════
+       BOTTOM STICKY BAR (mobile)
+       ═══════════════════════════════ */
+    .sticky-bar {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      background: #ffffff;
+      border-top: 1px solid #bfdbfe;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      z-index: 99;
+    }
+    .sticky-bar-text {
+      font-size: 13px;
+      color: #64748b;
+      line-height: 1.5;
+      flex: 1;
+      min-width: 0;
+    }
+    .sticky-bar-line {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(6,199,85,0.12);
+      border: 1px solid rgba(6,199,85,0.35);
+      color: #06C755;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 10px 14px;
+      border-radius: 6px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: opacity 0.15s;
+    }
+    .sticky-bar-line:hover { opacity: 0.88; }
+    .sticky-bar-btn {
+      background: #f97316;
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 800;
+      padding: 10px 14px;
+      border-radius: 6px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: opacity 0.15s;
+    }
+    .sticky-bar-btn:hover { opacity: 0.88; }
+
+    .form-body.hide { display: none; }
+  </style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ═══════════════ HERO ═══════════════ -->
+  <!-- TODO：要不要在這裡同時掛「鯨海拾貝」品牌背書（見專案總覽第三節），還是只用風霈自己的品牌，待決定 -->
+  <section class="hero">
+    <div class="hero-brand">
+      <img src="./logo.png" alt="風霈國際傳媒" style="width:32px;height:32px;object-fit:contain;display:inline-block;vertical-align:middle;margin-right:8px;" />
+      <span style="vertical-align:middle;">風霈國際傳媒 · FENGPEINET</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════ 長圖內容區 ═══════════════ -->
+  <!-- TODO：舊站這裡是 8 張手繪長圖（./strips/finalstrips/01~08.webp），內容是「蝦皮AI攻略班」專屬文案，
+       不能沿用。廈門AI課目前還沒有對應素材，先用文字區塊佔位，對照專案總覽.md 第六節的九宮格規劃：
+       01=Hero延伸/主標、02=痛點共鳴、03~04=課程亮點、05=師資與合作背景(鯨海拾貝)、06=課程效益、07~08=定價/FAQ
+       之後有長圖素材了，把下面的 placeholder <div> 換回 <img class="strip" src="..."> 即可，class/id 結構不用動 -->
+  <div class="strip" style="min-height:160px;display:flex;align-items:center;justify-content:center;background:#f8faff;border-bottom:1px dashed #bfdbfe;color:#94a3b8;font-size:13px;text-align:center;padding:20px;">
+    TODO：長圖 01（主標延伸）— 素材未備
+  </div>
+
+  <!-- ═══════════════ COUNTDOWN ═══════════════ -->
+  <div class="countdown-bar">
+    <span class="countdown-label">距下一場說明會</span>
+    <div class="countdown-digits" id="countdown-digits">
+      <div class="cd-block">
+        <span class="cd-num" id="cd-d">--</span>
+        <span class="cd-lbl">天</span>
+      </div>
+      <span class="cd-sep">:</span>
+      <div class="cd-block">
+        <span class="cd-num" id="cd-h">--</span>
+        <span class="cd-lbl">時</span>
+      </div>
+      <span class="cd-sep">:</span>
+      <div class="cd-block">
+        <span class="cd-num" id="cd-m">--</span>
+        <span class="cd-lbl">分</span>
+      </div>
+      <span class="cd-sep">:</span>
+      <div class="cd-block">
+        <span class="cd-num" id="cd-s">--</span>
+        <span class="cd-lbl">秒</span>
+      </div>
+    </div>
+  </div>
+  <div class="strip" style="min-height:160px;display:flex;align-items:center;justify-content:center;background:#f8faff;border-bottom:1px dashed #bfdbfe;color:#94a3b8;font-size:13px;text-align:center;padding:20px;">
+    TODO：長圖 02（痛點共鳴）— 素材未備
+  </div>
+
+  <div class="section-gap"></div>
+
+  <div class="strip" style="min-height:160px;display:flex;align-items:center;justify-content:center;background:#f8faff;border-bottom:1px dashed #bfdbfe;color:#94a3b8;font-size:13px;text-align:center;padding:20px;">
+    TODO：長圖 03（課程亮點）— 素材未備
+  </div>
+  <div class="section-gap"></div>
+  <div class="strip" style="min-height:160px;display:flex;align-items:center;justify-content:center;background:#f8faff;border-bottom:1px dashed #bfdbfe;color:#94a3b8;font-size:13px;text-align:center;padding:20px;">
+    TODO：長圖 04（課程亮點）— 素材未備
+  </div>
+  <div class="section-gap"></div>
+  <div class="strip" style="min-height:160px;display:flex;align-items:center;justify-content:center;background:#f8faff;border-bottom:1px dashed #bfdbfe;color:#94a3b8;font-size:13px;text-align:center;padding:20px;">
+    TODO：長圖 05（師資與合作背景／鯨海拾貝）— 素材未備
+  </div>
+  <div style="padding: 20px 16px;">
+    <a href="#form" class="mid-cta-btn">免費報名說明會 →</a>
+  </div>
+  <div class="section-gap"></div>
+  <div class="strip" style="min-height:160px;display:flex;align-items:center;justify-content:center;background:#f8faff;border-bottom:1px dashed #bfdbfe;color:#94a3b8;font-size:13px;text-align:center;padding:20px;">
+    TODO：長圖 06（課程效益）— 素材未備
+  </div>
+
+
+  <div class="section-gap"></div>
+
+  <div class="strip" style="min-height:160px;display:flex;align-items:center;justify-content:center;background:#f8faff;border-bottom:1px dashed #bfdbfe;color:#94a3b8;font-size:13px;text-align:center;padding:20px;">
+    TODO：長圖 07（定價與行動呼籲）— 素材未備
+  </div>
+  <div class="section-gap"></div>
+  <div class="strip" style="min-height:160px;display:flex;align-items:center;justify-content:center;background:#f8faff;border-bottom:1px dashed #bfdbfe;color:#94a3b8;font-size:13px;text-align:center;padding:20px;">
+    TODO：長圖 08（學員見證／FAQ）— 素材未備
+  </div>
+
+  <!-- ═══════════════ FORM ═══════════════ -->
+  <section class="form-section" id="form">
+
+    <div style="text-align: center;">
+      <h2 class="form-title">想知道《AI設計師研修班》適不適合你？</h2><!-- TODO：確認最終課程/活動名稱 -->
+      <p class="form-subtitle">填寫資料 保留說明會席次</p>
+    </div>
+
+    <!-- success message -->
+    <div class="form-success" id="form-success">
+      <div class="success-icon">✓</div>
+      <p class="success-title">報名成功！</p>
+      <p class="success-sub">確認信已寄至您的信箱<br>請記得查收並保存說明會連結</p>
+      <a href="https://lin.ee/7zmJUX9" class="success-line-btn" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 5.92 2 10.72c0 3.2 2.01 6.01 5.04 7.64-.17.64-.63 2.33-.72 2.69-.12.45.16.44.34.32.14-.09 2.22-1.51 3.12-2.13.39.06.79.09 1.22.09 5.52 0 10-3.92 10-8.72C22 5.92 17.52 2 12 2z"/></svg>
+        加入官方 LINE，掌握最新資訊
+      </a>
+      <br>
+      <a href="#form" id="register-again" style="font-size:12px;color:#94a3b8;text-decoration:underline;">為其他人報名</a>
+    </div>
+
+    <!-- form body -->
+    <div class="form-body" id="form-body">
+      <form id="signup-form" novalidate>
+
+        <div class="form-group">
+          <label class="form-label" for="f-name">暱稱<span class="req">*</span></label>
+          <input class="form-input" type="text" id="f-name" name="name" placeholder="請輸入您的暱稱" required autocomplete="nickname" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="f-email">Email<span class="req">*</span></label>
+          <input class="form-input" type="email" id="f-email" name="email" placeholder="請輸入您的 Email" required autocomplete="email" />
+          <p style="font-size:12px;color:#94a3b8;margin-top:4px;">※ 說明會連結將寄送至此信箱，請確認信箱正確</p>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="f-phone">聯絡電話</label>
+          <input class="form-input" type="tel" id="f-phone" name="phone" placeholder="請輸入您的手機號碼（選填）" autocomplete="tel" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="f-referrer">推薦人</label>
+          <input class="form-input" type="text" id="f-referrer" name="referrer" placeholder="填入介紹你來的人的暱稱（選填）" />
+        </div>
+
+        <div class="form-group">
+          <!-- TODO：場次日期/時間都是佔位值，等說明會實際場次排定後要跟 countdown 目標時間、GAS 的 ZOOM_LINKS 一起更新 -->
+          <span class="session-label">選擇場次<span class="req">*</span></span>
+          <div class="session-options">
+            <input class="session-option" type="radio" name="sessionDate" id="s1" value="待定場次一" required />
+            <label class="session-option-label" for="s1">
+              <div class="session-radio-dot"><div class="session-radio-inner"></div></div>
+              第一場 &nbsp;TODO 日期時間
+            </label>
+            <input class="session-option" type="radio" name="sessionDate" id="s2" value="待定場次二" />
+            <label class="session-option-label" for="s2">
+              <div class="session-radio-dot"><div class="session-radio-inner"></div></div>
+              第二場 &nbsp;TODO 日期時間
+            </label>
+            <input class="session-option" type="radio" name="sessionDate" id="s3" value="待定場次三" />
+            <label class="session-option-label" for="s3">
+              <div class="session-radio-dot"><div class="session-radio-inner"></div></div>
+              第三場 &nbsp;TODO 日期時間
+            </label>
+            <input class="session-option" type="radio" name="sessionDate" id="s-no" value="no-session" />
+            <label class="session-option-label session-option-label--no" for="s-no">
+              <div class="session-radio-dot"><div class="session-radio-inner"></div></div>
+              以上場次都不適合我
+            </label>
+          </div>
+
+          <!-- no-session panel -->
+          <div class="no-session-panel" id="no-session-panel">
+            <p class="no-session-title">歡迎加入風霈官方LINE，<br>申請限量一對一專人諮詢服務：</p>
+            <p class="no-session-steps">
+              1️⃣ 點下方按鈕複製文字<br>
+              2️⃣ 加入風霈官方 LINE<br>
+              3️⃣ 貼上傳送，預約完成 ✅
+            </p>
+            <div class="copy-row">
+              <span class="copy-text">我要申請免費限量一對一諮詢</span>
+              <button class="copy-btn" id="copy-btn" type="button">複製</button>
+            </div>
+            <a href="https://lin.ee/7zmJUX9" class="no-session-line-btn" target="_blank" rel="noopener">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 5.92 2 10.72c0 3.2 2.01 6.01 5.04 7.64-.17.64-.63 2.33-.72 2.69-.12.45.16.44.34.32.14-.09 2.22-1.51 3.12-2.13.39.06.79.09 1.22.09 5.52 0 10-3.92 10-8.72C22 5.92 17.52 2 12 2z"/></svg>
+              加入官方 LINE
+            </a>
+          </div>
+
+        </div>
+
+        <button class="form-submit" type="submit" id="submit-btn">免費報名</button>
+
+        <p class="form-privacy">送出表單代表您同意我們的隱私權政策，並同意接收系統發送之提醒信件及電話。</p>
+
+      </form>
+    </div>
+
+  </section>
+
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <footer class="site-footer">
+    <p class="footer-brand">FENGPEINET · 風霈國際傳媒</p>
+    <div class="footer-links">
+      <a class="footer-link" href="https://www.fpshop.tw/" target="_blank" rel="noopener">風電商</a>
+      <a class="footer-link" href="https://www.instagram.com/fengpeinet/" target="_blank" rel="noopener">Instagram</a>
+      <a class="footer-link" href="https://www.facebook.com/profile.php?id=61560506886097&locale=zh_TW" target="_blank" rel="noopener">Facebook</a>
+    </div>
+  </footer>
+
+</div><!-- /page -->
+
+<!-- ═══════════════ BOTTOM STICKY BAR ═══════════════ -->
+<div class="sticky-bar" role="complementary" aria-label="快速報名">
+  <div class="sticky-bar-text">
+    名額有限，額滿即止
+  </div>
+  <a href="https://lin.ee/7zmJUX9" class="sticky-bar-line" target="_blank" rel="noopener" aria-label="加入官方 LINE">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="#06C755" aria-hidden="true"><path d="M12 2C6.48 2 2 5.92 2 10.72c0 3.2 2.01 6.01 5.04 7.64-.17.64-.63 2.33-.72 2.69-.12.45.16.44.34.32.14-.09 2.22-1.51 3.12-2.13.39.06.79.09 1.22.09 5.52 0 10-3.92 10-8.72C22 5.92 17.52 2 12 2z"/></svg>
+    加入LINE
+  </a>
+  <a href="#form" class="sticky-bar-btn">立即報名 →</a>
+</div>
+
+<!-- ═══════════════ JS ═══════════════ -->
+<script>
+(function () {
+
+  /* ── Countdown ── */
+  // TODO：場次日期定案後，改成第一場說明會的實際時間
+  var target = new Date('2026-12-31T20:00:00+08:00');
+
+  function pad(n) { return String(n).padStart(2, '0'); }
+
+  function tickCountdown() {
+    var now  = new Date();
+    var diff = target - now;
+
+    if (diff <= 0) {
+      var digits = document.getElementById('countdown-digits');
+      if (digits) digits.innerHTML = '<span class="countdown-ended">說明會進行中</span>';
+      return;
+    }
+
+    var days  = Math.floor(diff / 86400000);
+    var hours = Math.floor((diff % 86400000) / 3600000);
+    var mins  = Math.floor((diff % 3600000)  / 60000);
+    var secs  = Math.floor((diff % 60000)    / 1000);
+
+    var dEl = document.getElementById('cd-d');
+    var hEl = document.getElementById('cd-h');
+    var mEl = document.getElementById('cd-m');
+    var sEl = document.getElementById('cd-s');
+
+    if (dEl) dEl.textContent = pad(days);
+    if (hEl) hEl.textContent = pad(hours);
+    if (mEl) mEl.textContent = pad(mins);
+    if (sEl) sEl.textContent = pad(secs);
+  }
+
+  tickCountdown();
+  setInterval(tickCountdown, 1000);
+
+  /* ── Form submit ── */
+  // TODO：這裡不能沿用舊站的 GAS 網址，那個是綁在「蝦皮AI攻略班」的 Google 試算表上，
+  // 表單會直接寫進舊活動的名單。要另外新增一個 Google 試算表 + 部署新的 Apps Script
+  // （google_apps_script.js 已經複製過來了，內容也已加上對應的 TODO），拿到新的部署網址後貼在這裡。
+  var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyW15UpbmUh1rxNvXbP5fBwl9WPr21sTu5AHJOrj2LWEvh7cwrIoB9dBqkMBWRp39O9/exec';
+  var form        = document.getElementById('signup-form');
+  var submitBtn   = document.getElementById('submit-btn');
+  var formBody    = document.getElementById('form-body');
+  var formSuccess = document.getElementById('form-success');
+  var againLink   = document.getElementById('register-again');
+
+  var refParam = new URLSearchParams(location.search).get('ref');
+  if (refParam) {
+    var refField = document.getElementById('f-referrer');
+    if (refField) refField.value = decodeURIComponent(refParam);
+  }
+
+  if (new URLSearchParams(location.search).has('preview')) {
+    if (formBody)    formBody.classList.add('hide');
+    if (formSuccess) formSuccess.classList.add('show');
+  }
+
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      var name    = document.getElementById('f-name').value.trim();
+      var phone   = document.getElementById('f-phone').value.trim();
+      var email   = document.getElementById('f-email').value.trim();
+      var session = form.querySelector('input[name="sessionDate"]:checked');
+
+      if (!name || !email || !session || session.value === 'no-session') {
+        alert('請填寫暱稱、Email 並選擇場次');
+        return;
+      }
+
+      submitBtn.textContent = '處理中...';
+      submitBtn.disabled    = true;
+
+      var payload = {
+        name:        name,
+        phone:       phone,
+        email:       email,
+        lineId:      '',
+        referrer:    document.getElementById('f-referrer').value.trim(),
+        sessionDate: session.value,
+        timestamp:   new Date().toISOString()
+      };
+
+      fetch(SCRIPT_URL, {
+        method:  'POST',
+        mode:    'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body:    JSON.stringify(payload)
+      }).then(function () {
+        showSuccess();
+      }).catch(function () {
+        alert('報名發生錯誤，請稍後再試或聯絡承辦單位！');
+        submitBtn.textContent = '免費報名';
+        submitBtn.disabled    = false;
+      });
+    });
+  }
+
+  function showSuccess() {
+    if (typeof fbq !== 'undefined') fbq('track', 'Lead');
+    if (formBody)    formBody.classList.add('hide');
+    if (formSuccess) formSuccess.classList.add('show');
+    document.getElementById('form').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  if (againLink) {
+    againLink.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (formBody)    formBody.classList.remove('hide');
+      if (formSuccess) formSuccess.classList.remove('show');
+      if (form) form.reset();
+      submitBtn.textContent = '立即報名';
+      submitBtn.disabled    = false;
+      noSessionPanel.classList.remove('show');
+      submitBtn.style.display = '';
+    });
+  }
+
+  /* ── No-session toggle ── */
+  var noSessionPanel = document.getElementById('no-session-panel');
+  var sessionRadios  = document.querySelectorAll('input[name="sessionDate"]');
+
+  sessionRadios.forEach(function (radio) {
+    radio.addEventListener('change', function () {
+      if (this.value === 'no-session') {
+        noSessionPanel.classList.add('show');
+        submitBtn.style.display = 'none';
+      } else {
+        noSessionPanel.classList.remove('show');
+        submitBtn.style.display = '';
+      }
+    });
+  });
+
+  /* ── Copy button ── */
+  var copyBtn = document.getElementById('copy-btn');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', function () {
+      var text = '我要申請免費限量一對一諮詢';
+
+      function onCopied() {
+        copyBtn.textContent = '已複製 ✓';
+        copyBtn.style.background = '#16a34a';
+        setTimeout(function () {
+          copyBtn.textContent = '複製';
+          copyBtn.style.background = '';
+        }, 2000);
+      }
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(onCopied).catch(function () { fallbackCopy(text); });
+      } else {
+        fallbackCopy(text);
+      }
+
+      function fallbackCopy(t) {
+        var ta = document.createElement('textarea');
+        ta.value = t;
+        ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0;';
+        document.body.appendChild(ta);
+        ta.focus(); ta.select();
+        try { document.execCommand('copy'); onCopied(); } catch (err) {}
+        document.body.removeChild(ta);
+      }
+    });
+  }
+
+})();
+
+// Meta Pixel 滾動追蹤
+(function () {
+  if (typeof fbq === 'undefined') return;
+  var fired = { top: false, cv: false, bottom: false, form: false };
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      var id = entry.target.dataset.pixelEvent;
+      if (id === 'top' && !fired.top) {
+        fired.top = true;
+        fbq('track', 'ViewContent');
+      }
+      if (id === 'cv' && !fired.cv) {
+        fired.cv = true;
+        fbq('trackCustom', 'ContentView');
+      }
+      if (id === 'bottom' && !fired.bottom) {
+        fired.bottom = true;
+        fbq('trackCustom', 'ReachBottom');
+      }
+      if (id === 'form' && !fired.form) {
+        fired.form = true;
+        fbq('trackCustom', 'ViewForm');
+      }
+    });
+  }, { threshold: 0.3 });
+
+  // TOP：滑過第一張條圖（首圖留存）
+  var strip01 = document.querySelector('.strip[src*="01"]');
+  if (strip01) { strip01.dataset.pixelEvent = 'top'; observer.observe(strip01); }
+
+  // CV：滑到第五張條圖（看完內容）
+  var strip05 = document.querySelector('.strip[src*="05"]');
+  if (strip05) { strip05.dataset.pixelEvent = 'cv'; observer.observe(strip05); }
+
+  // BOTTOM：滑到第八張條圖（看完全頁）
+  var strip08 = document.querySelector('.strip[src*="08"]');
+  if (strip08) { strip08.dataset.pixelEvent = 'bottom'; observer.observe(strip08); }
+
+  // FORM：滑到表單區（看到問卷但未必填寫）
+  var formSection = document.querySelector('.form-section');
+  if (formSection) { formSection.dataset.pixelEvent = 'form'; observer.observe(formSection); }
+})();
+</script>
+
+</body>
+</html>
