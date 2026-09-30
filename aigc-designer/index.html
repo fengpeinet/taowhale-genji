@@ -6,8 +6,7 @@
   <meta name="description" content="《AI設計師研修班》線上課說明會，零成本報名，立刻搶佔名額！" /><!-- TODO：課程/活動名稱待定，先用鯨海拾貝課程名佔位 -->
   <title>《AI設計師研修班》說明會 · 風霈學院</title><!-- TODO：確認活動對外名稱 -->
 
-  <!-- TODO：以下 GA4 / Meta Pixel 是舊「蝦皮AI攻略班」專案的追蹤 ID，廈門AI課要用新的 ID，
-       申請好之前先整段保持註解，避免這次的流量誤算進舊活動的成效報表 -->
+  <!-- TODO：GA4 沿用舊「蝦皮AI攻略班」的 ID 先佔位，廈門AI課要用新的 GA4 ID，申請好再填、再打開註解 -->
   <!--
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
@@ -16,30 +15,59 @@
     gtag('js', new Date());
     gtag('config', 'G-XXXXXXXXXX');
   </script>
+  -->
 
+  <!-- TODO：Meta Pixel 雙軌埋法——舊 Pixel（4392779817699567）留著讓風霈的受眾名單持續累積，
+       新 Pixel（廈門AI課專用，去 Facebook 事件管理工具申請後把 XXXXXXXXXXXXXXX 換成真的 ID）
+       讓這次活動的成效報表跟舊活動分開看。兩個 ID 都填好、確認沒問題後再把整段註解打開 -->
+  <!--
   <script>
   !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
   n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
   n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
   t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
   document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init','4392779817699567');
   fbq('init','XXXXXXXXXXXXXXX');
   fbq('track','PageView');
   </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=4392779817699567&ev=PageView&noscript=1"/></noscript>
   <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"/></noscript>
   -->
-  <!-- 頁面下方的 Meta Pixel 滾動追蹤 script（fbq('track','ViewContent') 等）也要等上面這段打開才會生效，先保留不用動 -->
+  <!-- 頁面下方的 Meta Pixel 滾動追蹤 script（fbq('track','ViewContent') 等）不用另外改，fbq 會自動同時送給上面 init 過的兩個 Pixel -->
 
   <style>
+    /* ─── 配色變數（淺色系，2026-09-29 二次改版，hero/body 改淡、按鈕簡化）─── */
+    :root {
+      --bg-deep: #f8f5fc;
+      --bg-page-top: #ffffff;
+      --bg-page-bottom: #f2ecf9;
+      --bg-panel: #ffffff;
+      --bg-panel-soft: #f6f1fb;
+      --bg-input: #f7f4fc;
+      --border-soft: rgba(60,30,90,0.12);
+      --text-primary: #241536;
+      --text-secondary: #6b5a86;
+      --text-muted: #9c8db3;
+      --accent-purple: #a855f7;
+      --accent-purple-light: #7c3aed;
+      --accent-pink: #d348cd;
+      --accent-gold: #fbbf24;
+      --cta-gradient: var(--accent-pink);
+      --cta-glow: none;
+      --line-green: #06C755;
+    }
+
     /* ─── Reset ─── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; font-size: 16px; }
     body {
-      background: #ffffff;
-      color: #0f172a;
+      background: var(--bg-deep);
+      color: var(--text-primary);
       font-family: -apple-system, "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
     img { display: block; width: 100%; height: auto; }
     a { color: inherit; text-decoration: none; }
@@ -49,7 +77,7 @@
       width: 100%;
       max-width: 480px;
       margin: 0 auto;
-      background: #ffffff;
+      background: linear-gradient(180deg, var(--bg-page-top) 0%, var(--bg-page-bottom) 100%);
       position: relative;
     }
 
@@ -63,14 +91,14 @@
        HERO
        ═══════════════════════════════ */
     .hero {
-      background: #ffffff;
+      background: transparent;
       padding: 28px 20px 0;
       position: relative;
       overflow: hidden;
     }
     .hero-brand {
       font-size: 11px;
-      color: #64748b;
+      color: var(--text-secondary);
       letter-spacing: 0.14em;
       text-transform: uppercase;
       margin-bottom: 14px;
@@ -79,8 +107,8 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: #eff6ff;
-      border: 1px solid #bfdbfe;
+      background: rgba(168,85,247,0.15);
+      border: 1px solid rgba(168,85,247,0.4);
       border-radius: 4px;
       padding: 5px 12px;
       margin-bottom: 18px;
@@ -88,25 +116,25 @@
     .hero-badge-dot {
       width: 7px; height: 7px;
       border-radius: 50%;
-      background: #f97316;
+      background: var(--accent-pink);
       flex-shrink: 0;
     }
     .hero-badge-text {
       font-size: 13px;
-      color: #1d4ed8;
+      color: var(--accent-purple-light);
       font-weight: 600;
       letter-spacing: 0.06em;
     }
     .hero-title-small {
       font-size: 16px;
-      color: #64748b;
+      color: var(--text-secondary);
       font-weight: 400;
       margin-bottom: 4px;
     }
     .hero-title-main {
       font-size: 36px;
       font-weight: 900;
-      color: #0f172a;
+      color: var(--text-primary);
       line-height: 1.15;
       margin-bottom: 8px;
       letter-spacing: -0.01em;
@@ -114,13 +142,13 @@
     .hero-event-name {
       font-size: 20px;
       font-weight: 700;
-      color: #2563eb;
+      color: var(--accent-purple-light);
       line-height: 1.3;
       margin-bottom: 14px;
     }
     .hero-sub {
       font-size: 15px;
-      color: #64748b;
+      color: var(--text-secondary);
       margin-bottom: 18px;
       line-height: 1.7;
     }
@@ -132,15 +160,15 @@
     }
     .hero-tag {
       font-size: 13px;
-      color: #1d4ed8;
-      background: #eff6ff;
-      border: 0.5px solid #bfdbfe;
+      color: var(--accent-purple-light);
+      background: rgba(168,85,247,0.12);
+      border: 0.5px solid rgba(168,85,247,0.35);
       border-radius: 20px;
       padding: 4px 10px;
     }
     .hero-cta {
       display: block;
-      background: #f97316;
+      background: var(--cta-gradient);
       color: #ffffff;
       font-size: 17px;
       font-weight: 800;
@@ -150,14 +178,28 @@
       margin-bottom: 20px;
       letter-spacing: 0.03em;
       transition: opacity 0.15s;
+      box-shadow: var(--cta-glow);
     }
     .hero-cta:hover { opacity: 0.88; }
 
+    /* ─── Hero → 條圖波浪分隔 ─── */
+    .hero-wave {
+      position: relative;
+      z-index: 2;
+      margin-bottom: -56px;
+      pointer-events: none;
+    }
+    .hero-wave svg {
+      display: block;
+      width: 100%;
+      height: 56px;
+    }
+
     /* ─── Countdown ─── */
     .countdown-bar {
-      background: #f0f7ff;
-      border-top: 1px solid #bfdbfe;
-      border-bottom: 1px solid #bfdbfe;
+      background: var(--bg-panel-soft);
+      border-top: 1px solid var(--border-soft);
+      border-bottom: 1px solid var(--border-soft);
       padding: 24px 20px;
       display: flex;
       flex-direction: column;
@@ -166,7 +208,7 @@
     }
     .countdown-label {
       font-size: 14px;
-      color: #64748b;
+      color: var(--text-secondary);
       letter-spacing: 0.06em;
     }
     .countdown-digits {
@@ -178,7 +220,7 @@
     .cd-num {
       font-size: 52px;
       font-weight: 800;
-      color: #2563eb;
+      color: var(--accent-pink);
       line-height: 1;
       font-variant-numeric: tabular-nums;
       display: block;
@@ -186,20 +228,21 @@
     }
     .cd-lbl {
       font-size: 14px;
-      color: #94a3b8;
+      color: var(--text-muted);
       display: block;
       margin-top: 4px;
     }
     .cd-sep {
       font-size: 48px;
       font-weight: 800;
-      color: #93c5fd;
+      color: var(--accent-pink);
+      opacity: 0.45;
       margin-bottom: 22px;
       align-self: flex-start;
     }
     .countdown-ended {
       font-size: 14px;
-      color: #2563eb;
+      color: var(--accent-purple-light);
       font-weight: 600;
       text-align: center;
       width: 100%;
@@ -208,25 +251,25 @@
     /* ═══════════════════════════════
        IMAGE STRIPS
        ═══════════════════════════════ */
-    .strip { display: block; width: 100%; background-color: #ffffff; }
+    .strip { display: block; width: 100%; background-color: var(--bg-page-top); }
     .section-gap { display: none; }
 
     /* ─── Mid CTA ─── */
     .mid-cta-wrap {
-      background: #ffffff;
+      background: var(--bg-page-top);
       padding: 16px 20px;
-      border-top: 2px solid #f97316;
+      border-top: 2px solid var(--accent-pink);
     }
     .mid-cta-label {
       font-size: 13px;
-      color: #94a3b8;
+      color: var(--text-muted);
       text-align: center;
       margin-bottom: 10px;
       letter-spacing: 0.04em;
     }
     .mid-cta-btn {
       display: block;
-      background: #f97316;
+      background: var(--cta-gradient);
       color: #ffffff;
       font-size: 16px;
       font-weight: 800;
@@ -235,6 +278,7 @@
       border-radius: 8px;
       letter-spacing: 0.03em;
       transition: opacity 0.15s;
+      box-shadow: var(--cta-glow);
     }
     .mid-cta-btn:hover { opacity: 0.88; }
 
@@ -242,13 +286,13 @@
        VIDEO
        ═══════════════════════════════ */
     .video-section {
-      background: #f8faff;
+      background: var(--bg-panel);
       padding: 20px 20px 4px;
-      border-top: 0.5px solid #e2eaf8;
+      border-top: 0.5px solid var(--border-soft);
     }
     .video-label {
       font-size: 13px;
-      color: #64748b;
+      color: var(--text-secondary);
       letter-spacing: 0.1em;
       text-align: center;
       margin-bottom: 12px;
@@ -271,146 +315,176 @@
        FORM
        ═══════════════════════════════ */
     .form-section {
-      background: #ffffff;
+      position: relative;
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
       padding: 28px 20px 32px;
-      border-top: 2px solid #2563eb;
+      border-top: 1px solid rgba(124, 58, 237, 0.16);
+      border-radius: 20px 20px 0 0;
+      z-index: 1;
+    }
+    .form-section::before,
+    .form-section::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(30px);
+      pointer-events: none;
+      z-index: -1;
+    }
+    .form-section::before {
+      top: -70px;
+      right: -50px;
+      width: 220px;
+      height: 220px;
+      background: radial-gradient(circle, rgba(211, 72, 205, 0.22), transparent 70%);
+    }
+    .form-section::after {
+      bottom: -60px;
+      left: -70px;
+      width: 260px;
+      height: 260px;
+      background: radial-gradient(circle, rgba(168, 85, 247, 0.2), transparent 70%);
     }
     .form-eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: #eff6ff;
-      border: 0.5px solid #bfdbfe;
+      background: rgba(168,85,247,0.12);
+      border: 0.5px solid rgba(168,85,247,0.4);
       border-radius: 20px;
       padding: 5px 14px;
       margin-bottom: 12px;
     }
     .form-eyebrow span {
       font-size: 12px;
-      color: #1d4ed8;
+      color: var(--accent-purple-light);
       font-weight: 600;
       letter-spacing: 0.06em;
     }
     .form-title {
       font-size: 20px;
       font-weight: 800;
-      color: #2563eb;
+      color: var(--accent-purple-light);
       margin-bottom: 6px;
     }
     .form-subtitle {
       font-size: 15px;
-      color: #64748b;
+      color: var(--text-secondary);
       margin-bottom: 20px;
       line-height: 1.6;
     }
     .form-group { margin-bottom: 14px; }
     .form-label {
       font-size: 13px;
-      color: #64748b;
+      color: var(--text-secondary);
       margin-bottom: 6px;
       display: block;
       letter-spacing: 0.04em;
     }
-    .form-label .req { color: #f97316; margin-left: 2px; }
+    .form-label .req { color: var(--accent-pink); margin-left: 2px; }
     .form-input {
       width: 100%;
-      background: #f8faff;
-      border: 1px solid #e2eaf8;
+      background: var(--bg-input);
+      border: 1px solid var(--border-soft);
       border-radius: 6px;
       padding: 12px 14px;
       font-size: 15px;
-      color: #0f172a;
+      color: var(--text-primary);
       outline: none;
       transition: border-color 0.15s;
       font-family: inherit;
       -webkit-appearance: none;
     }
-    .form-input::placeholder { color: #94a3b8; }
-    .form-input:focus { border-color: #93c5fd; }
+    .form-input::placeholder { color: var(--text-muted); }
+    .form-input:focus { border-color: var(--accent-purple-light); }
 
     /* session radio */
     .session-label {
       font-size: 13px;
-      color: #64748b;
+      color: var(--text-secondary);
       margin-bottom: 8px;
       display: block;
       letter-spacing: 0.04em;
     }
-    .session-label .req { color: #f97316; margin-left: 2px; }
+    .session-label .req { color: var(--accent-pink); margin-left: 2px; }
     .session-options { display: flex; flex-direction: column; gap: 8px; }
     .session-option { display: none; }
     .session-option-label {
       display: flex;
       align-items: center;
       gap: 10px;
-      background: #f8faff;
-      border: 1px solid #e2eaf8;
+      background: var(--bg-input);
+      border: 1px solid var(--border-soft);
       border-radius: 6px;
       padding: 13px 14px;
       cursor: pointer;
       transition: border-color 0.15s, background 0.15s;
       font-size: 15px;
-      color: #64748b;
+      color: var(--text-secondary);
     }
     .session-option:checked + .session-option-label {
-      border-color: #93c5fd;
-      background: #eff6ff;
-      color: #1d4ed8;
+      border-color: var(--accent-purple-light);
+      background: rgba(168,85,247,0.15);
+      color: var(--text-primary);
+      box-shadow: 0 0 0 1px rgba(168,85,247,0.3), 0 0 20px rgba(168,85,247,0.35);
     }
     .session-radio-dot {
       width: 16px; height: 16px;
       border-radius: 50%;
-      border: 1.5px solid #bfdbfe;
+      border: 1.5px solid var(--border-soft);
       flex-shrink: 0;
       display: flex; align-items: center; justify-content: center;
       transition: border-color 0.15s;
     }
     .session-option:checked + .session-option-label .session-radio-dot {
-      border-color: #2563eb;
-      background: rgba(37,99,235,0.1);
+      border-color: var(--accent-purple);
+      background: rgba(168,85,247,0.2);
     }
     .session-radio-inner {
       width: 7px; height: 7px;
       border-radius: 50%;
-      background: #2563eb;
+      background: var(--accent-purple);
       opacity: 0;
       transition: opacity 0.15s;
     }
     .session-option:checked + .session-option-label .session-radio-inner { opacity: 1; }
     #s-no:checked + .session-option-label--no {
-      border-color: #fdba74;
-      background: #fff7ed;
-      color: #c2410c;
+      border-color: var(--accent-gold);
+      background: rgba(251,191,36,0.12);
+      color: #92400e;
+      box-shadow: 0 0 0 1px rgba(251,191,36,0.25), 0 0 20px rgba(251,191,36,0.3);
     }
     #s-no:checked + .session-option-label--no .session-radio-dot {
-      border-color: #f97316;
-      background: rgba(249,115,22,0.1);
+      border-color: var(--accent-gold);
+      background: rgba(251,191,36,0.15);
     }
     #s-no:checked + .session-option-label--no .session-radio-inner {
-      background: #f97316;
+      background: var(--accent-gold);
     }
 
     /* no-session panel */
     .no-session-panel {
       display: none;
       margin-top: 12px;
-      background: #ffffff;
-      border: 1px solid #e2eaf8;
-      border-top: 3px solid #f97316;
+      background: var(--bg-panel-soft);
+      border: 1px solid var(--border-soft);
+      border-top: 3px solid var(--accent-gold);
       border-radius: 8px;
       padding: 18px 16px 16px;
     }
     .no-session-panel.show { display: block; }
     .no-session-title {
       font-size: 15px;
-      color: #0f172a;
+      color: var(--text-primary);
       font-weight: 800;
       line-height: 1.6;
       margin-bottom: 14px;
     }
     .no-session-steps {
       font-size: 13px;
-      color: #64748b;
+      color: var(--text-secondary);
       margin-bottom: 14px;
       line-height: 2;
     }
@@ -418,8 +492,8 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      background: #f8faff;
-      border: 1px solid #bfdbfe;
+      background: var(--bg-input);
+      border: 1px solid var(--border-soft);
       border-radius: 6px;
       padding: 12px 14px;
       margin-bottom: 12px;
@@ -427,12 +501,12 @@
     .copy-text {
       flex: 1;
       font-size: 14px;
-      color: #0f172a;
+      color: var(--text-primary);
       font-weight: 700;
     }
     .copy-btn {
-      background: #f97316;
-      color: #fff;
+      background: var(--accent-gold);
+      color: #1f1035;
       font-size: 12px;
       font-weight: 700;
       border: none;
@@ -449,7 +523,7 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
-      background: #06C755;
+      background: var(--line-green);
       color: #fff;
       font-size: 15px;
       font-weight: 700;
@@ -463,7 +537,7 @@
     .form-submit {
       display: block;
       width: 100%;
-      background: #2563eb;
+      background: var(--cta-gradient);
       color: #ffffff;
       font-size: 17px;
       font-weight: 800;
@@ -476,13 +550,14 @@
       letter-spacing: 0.03em;
       font-family: inherit;
       transition: opacity 0.15s;
+      box-shadow: var(--cta-glow);
     }
     .form-submit:hover { opacity: 0.88; }
     .form-submit:disabled { opacity: 0.5; cursor: not-allowed; }
 
     .form-privacy {
       font-size: 11px;
-      color: #cbd5e1;
+      color: var(--text-muted);
       text-align: center;
       margin-top: 10px;
       line-height: 1.6;
@@ -498,9 +573,9 @@
     .success-icon {
       width: 52px; height: 52px;
       border-radius: 50%;
-      background: #eff6ff;
-      border: 1.5px solid #bfdbfe;
-      color: #2563eb;
+      background: rgba(168,85,247,0.15);
+      border: 1.5px solid rgba(168,85,247,0.4);
+      color: var(--accent-purple-light);
       display: flex; align-items: center; justify-content: center;
       margin: 0 auto 14px;
       font-size: 22px;
@@ -508,12 +583,12 @@
     .success-title {
       font-size: 18px;
       font-weight: 700;
-      color: #0f172a;
+      color: var(--text-primary);
       margin-bottom: 6px;
     }
     .success-sub {
       font-size: 12px;
-      color: #64748b;
+      color: var(--text-secondary);
       margin-bottom: 18px;
       line-height: 1.7;
     }
@@ -521,7 +596,7 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: #06C755;
+      background: var(--line-green);
       color: #fff;
       font-size: 14px;
       font-weight: 700;
@@ -534,13 +609,13 @@
        FOOTER
        ═══════════════════════════════ */
     .site-footer {
-      background: #f8faff;
+      background: var(--bg-deep);
       padding: 20px 20px 100px;
-      border-top: 0.5px solid #e2eaf8;
+      border-top: 0.5px solid var(--border-soft);
     }
     .footer-brand {
       font-size: 11px;
-      color: #94a3b8;
+      color: var(--text-muted);
       letter-spacing: 0.14em;
       text-align: center;
       margin-bottom: 12px;
@@ -548,7 +623,7 @@
       transition: color 0.3s ease;
       cursor: default;
     }
-    .footer-brand:hover { color: #2563eb; }
+    .footer-brand:hover { color: var(--accent-purple-light); }
     .footer-links {
       display: flex;
       justify-content: center;
@@ -558,14 +633,14 @@
     }
     .footer-link {
       font-size: 12px;
-      color: #93c5fd;
+      color: var(--text-secondary);
       transition: color 0.15s;
     }
-    .footer-link:hover { color: #2563eb; }
+    .footer-link:hover { color: var(--accent-purple-light); }
     .footer-link + .footer-link::before {
       content: '｜';
       margin: 0 6px;
-      color: #e2eaf8;
+      color: var(--border-soft);
       pointer-events: none;
     }
 
@@ -575,8 +650,8 @@
     .sticky-bar {
       position: fixed;
       bottom: 0; left: 0; right: 0;
-      background: #ffffff;
-      border-top: 1px solid #bfdbfe;
+      background: var(--bg-panel);
+      border-top: 1px solid var(--border-soft);
       padding: 10px 16px;
       display: flex;
       align-items: center;
@@ -586,7 +661,7 @@
     }
     .sticky-bar-text {
       font-size: 13px;
-      color: #64748b;
+      color: var(--text-secondary);
       line-height: 1.5;
       flex: 1;
       min-width: 0;
@@ -608,7 +683,7 @@
     }
     .sticky-bar-line:hover { opacity: 0.88; }
     .sticky-bar-btn {
-      background: #f97316;
+      background: var(--cta-gradient);
       color: #ffffff;
       font-size: 13px;
       font-weight: 800;
@@ -636,14 +711,17 @@
     </div>
   </section>
 
-  <!-- ═══════════════ 長圖內容區 ═══════════════ -->
-  <!-- TODO：舊站這裡是 8 張手繪長圖（./strips/finalstrips/01~08.webp），內容是「蝦皮AI攻略班」專屬文案，
-       不能沿用。廈門AI課目前還沒有對應素材，先用文字區塊佔位，對照專案總覽.md 第六節的九宮格規劃：
-       01=Hero延伸/主標、02=痛點共鳴、03~04=課程亮點、05=師資與合作背景(鯨海拾貝)、06=課程效益、07~08=定價/FAQ
-       之後有長圖素材了，把下面的 placeholder <div> 換回 <img class="strip" src="..."> 即可，class/id 結構不用動 -->
-  <div class="strip" style="min-height:160px;display:flex;align-items:center;justify-content:center;background:#f8faff;border-bottom:1px dashed #bfdbfe;color:#94a3b8;font-size:13px;text-align:center;padding:20px;">
-    TODO：長圖 01（主標延伸）— 素材未備
+  <!-- 白色 hero 過渡到條圖的波浪分隔，呼應條圖本身的波浪轉場花紋 -->
+  <div class="hero-wave" aria-hidden="true">
+    <svg viewBox="0 0 480 56" preserveAspectRatio="none">
+      <path d="M0,0 L480,0 L480,16 C400,42 360,4 280,22 C200,40 160,2 80,18 C40,26 16,22 0,24 Z" fill="#ffffff"></path>
+    </svg>
   </div>
+
+  <!-- ═══════════════ 長圖內容區（同事提供 v2 條圖 p.1~p.10，2026-09-24 上稿） ═══════════════ -->
+  <!-- width/height 屬性讓瀏覽器一開始就保留版位空間，避免圖片load完才跳動（CLS），10張圖走 eager+async，
+       總檔案量約1.7MB，手機4G/5G下不會有「一條一條浮出來」的感覺 -->
+  <img class="strip" src="./strips/01.webp" width="960" height="1440" alt="" loading="eager" decoding="async" />
 
   <!-- ═══════════════ COUNTDOWN ═══════════════ -->
   <div class="countdown-bar">
@@ -670,40 +748,36 @@
       </div>
     </div>
   </div>
-  <div class="strip" style="min-height:160px;display:flex;align-items:center;justify-content:center;background:#f8faff;border-bottom:1px dashed #bfdbfe;color:#94a3b8;font-size:13px;text-align:center;padding:20px;">
-    TODO：長圖 02（痛點共鳴）— 素材未備
-  </div>
 
-  <div class="section-gap"></div>
+  <img class="strip" src="./strips/02.webp" width="960" height="1440" alt="" loading="eager" decoding="async" />
+  <img class="strip" src="./strips/03.webp" width="960" height="1440" alt="" loading="eager" decoding="async" />
 
-  <div class="strip" style="min-height:160px;display:flex;align-items:center;justify-content:center;background:#f8faff;border-bottom:1px dashed #bfdbfe;color:#94a3b8;font-size:13px;text-align:center;padding:20px;">
-    TODO：長圖 03（課程亮點）— 素材未備
-  </div>
-  <div class="section-gap"></div>
-  <div class="strip" style="min-height:160px;display:flex;align-items:center;justify-content:center;background:#f8faff;border-bottom:1px dashed #bfdbfe;color:#94a3b8;font-size:13px;text-align:center;padding:20px;">
-    TODO：長圖 04（課程亮點）— 素材未備
-  </div>
-  <div class="section-gap"></div>
-  <div class="strip" style="min-height:160px;display:flex;align-items:center;justify-content:center;background:#f8faff;border-bottom:1px dashed #bfdbfe;color:#94a3b8;font-size:13px;text-align:center;padding:20px;">
-    TODO：長圖 05（師資與合作背景／鯨海拾貝）— 素材未備
-  </div>
   <div style="padding: 20px 16px;">
     <a href="#form" class="mid-cta-btn">免費報名說明會 →</a>
   </div>
-  <div class="section-gap"></div>
-  <div class="strip" style="min-height:160px;display:flex;align-items:center;justify-content:center;background:#f8faff;border-bottom:1px dashed #bfdbfe;color:#94a3b8;font-size:13px;text-align:center;padding:20px;">
-    TODO：長圖 06（課程效益）— 素材未備
+
+  <img class="strip" src="./strips/04.webp" width="960" height="1440" alt="" loading="eager" decoding="async" />
+  <img class="strip" src="./strips/05.webp" width="960" height="1440" alt="" loading="eager" decoding="async" />
+  <img class="strip" src="./strips/06.webp" width="960" height="1440" alt="" loading="eager" decoding="async" />
+
+  <div style="padding: 20px 16px;">
+    <a href="#form" class="mid-cta-btn">免費報名說明會 →</a>
   </div>
 
+  <img class="strip" src="./strips/07.webp" width="960" height="1440" alt="" loading="eager" decoding="async" />
+  <img class="strip" src="./strips/08.webp" width="960" height="1440" alt="" loading="eager" decoding="async" />
+  <img class="strip" src="./strips/09.webp" width="960" height="1440" alt="" loading="eager" decoding="async" />
 
-  <div class="section-gap"></div>
-
-  <div class="strip" style="min-height:160px;display:flex;align-items:center;justify-content:center;background:#f8faff;border-bottom:1px dashed #bfdbfe;color:#94a3b8;font-size:13px;text-align:center;padding:20px;">
-    TODO：長圖 07（定價與行動呼籲）— 素材未備
+  <div style="padding: 20px 16px;">
+    <a href="#form" class="mid-cta-btn">免費報名說明會 →</a>
   </div>
-  <div class="section-gap"></div>
-  <div class="strip" style="min-height:160px;display:flex;align-items:center;justify-content:center;background:#f8faff;border-bottom:1px dashed #bfdbfe;color:#94a3b8;font-size:13px;text-align:center;padding:20px;">
-    TODO：長圖 08（學員見證／FAQ）— 素材未備
+
+  <img class="strip" src="./strips/10.webp" width="960" height="1440" alt="" loading="eager" decoding="async" />
+
+  <!-- p.11 原設計是霓虹按鈕圖，這裡做成真的可點擊按鈕（樣式沿用現有CTA風格，跟整體視覺統一），
+       文案沿用原設計「立即選擇說明會場次」 -->
+  <div style="padding: 24px 16px 8px;">
+    <a href="#form" class="hero-cta" style="display:block;">立即選擇說明會場次 →</a>
   </div>
 
   <!-- ═══════════════ FORM ═══════════════ -->
@@ -1040,9 +1114,9 @@
   var strip05 = document.querySelector('.strip[src*="05"]');
   if (strip05) { strip05.dataset.pixelEvent = 'cv'; observer.observe(strip05); }
 
-  // BOTTOM：滑到第八張條圖（看完全頁）
-  var strip08 = document.querySelector('.strip[src*="08"]');
-  if (strip08) { strip08.dataset.pixelEvent = 'bottom'; observer.observe(strip08); }
+  // BOTTOM：滑到第十張條圖（看完全頁）
+  var strip10 = document.querySelector('.strip[src*="10"]');
+  if (strip10) { strip10.dataset.pixelEvent = 'bottom'; observer.observe(strip10); }
 
   // FORM：滑到表單區（看到問卷但未必填寫）
   var formSection = document.querySelector('.form-section');
