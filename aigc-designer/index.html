@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <meta name="description" content="《AI設計師研修班》線上課說明會，零成本報名，立刻搶佔名額！" /><!-- TODO：課程/活動名稱待定，先用鯨海拾貝課程名佔位 -->
-  <title>《AI設計師研修班》說明會 · 風霈學院</title><!-- TODO：確認活動對外名稱 -->
+  <meta name="description" content="《AIGC 廣告全案課》線上課說明會，零成本報名，立刻搶佔名額！" />
+  <title>《AIGC 廣告全案課》說明會 · 風霈學院</title>
 
   <!-- TODO：GA4 沿用舊「蝦皮AI攻略班」的 ID 先佔位，廈門AI課要用新的 GA4 ID，申請好再填、再打開註解 -->
   <!--
@@ -781,7 +781,7 @@
   <section class="form-section" id="form">
 
     <div style="text-align: center;">
-      <h2 class="form-title">想知道《AI設計師研修班》適不適合你？</h2><!-- TODO：確認最終課程/活動名稱 -->
+      <h2 class="form-title">想知道《AIGC 廣告全案課》適不適合你？</h2>
       <p class="form-subtitle">填寫資料 保留說明會席次</p>
     </div>
 
@@ -985,18 +985,18 @@
         timestamp:   new Date().toISOString()
       };
 
+      // no-cors 本來就讀不到伺服器真正的回應，與其等整條後端流程（寫兩個試算表+寄信）跑完才顯示成功，
+      // 不如送出去就直接顯示成功，體感上不會卡在「處理中」很久。
+      // 畫面已經切到成功狀態了，fetch 真的失敗（例如斷網）時不再跳錯誤訊息打斷使用者，只在 console 留紀錄方便排查
       fetch(SCRIPT_URL, {
         method:  'POST',
         mode:    'no-cors',
         headers: { 'Content-Type': 'application/json' },
         body:    JSON.stringify(payload)
-      }).then(function () {
-        showSuccess();
-      }).catch(function () {
-        alert('報名發生錯誤，請稍後再試或聯絡承辦單位！');
-        submitBtn.textContent = '免費報名';
-        submitBtn.disabled    = false;
+      }).catch(function (err) {
+        console.error('報名表單送出失敗：', err);
       });
+      showSuccess();
     });
   }
 
