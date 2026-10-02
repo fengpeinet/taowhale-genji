@@ -723,10 +723,10 @@
     </svg>
   </div>
 
-  <!-- ═══════════════ 長圖內容區（同事提供 v2 條圖 p.1~p.10，2026-09-24 上稿） ═══════════════ -->
-  <!-- width/height 屬性讓瀏覽器一開始就保留版位空間，避免圖片load完才跳動（CLS），10張圖走 eager+async，
-       總檔案量約1.7MB，手機4G/5G下不會有「一條一條浮出來」的感覺 -->
-  <img class="strip" src="./strips/01.webp" width="960" height="1440" alt="" loading="eager" decoding="async" />
+  <!-- ═══════════════ 長圖內容區（鯨海拾貝官方條圖，2026-10-02 換上，取代原本同事的v2故事條圖） ═══════════════ -->
+  <!-- width/height 屬性讓瀏覽器一開始就保留版位空間，避免圖片load完才跳動（CLS），16張圖走 eager+async，
+       總檔案量約2.3MB，手機4G/5G下不會有「一條一條浮出來」的感覺 -->
+  <img class="strip" src="./strips/01.webp" width="941" height="783" alt="" loading="eager" decoding="async" />
 
   <!-- ═══════════════ COUNTDOWN ═══════════════ -->
   <div class="countdown-bar">
@@ -754,33 +754,37 @@
     </div>
   </div>
 
-  <img class="strip" src="./strips/02.webp" width="960" height="1440" alt="" loading="eager" decoding="async" />
-  <img class="strip" src="./strips/03.webp" width="960" height="1440" alt="" loading="eager" decoding="async" />
+  <img class="strip" src="./strips/02.webp" width="941" height="1604" alt="" loading="eager" decoding="async" />
+  <img class="strip" src="./strips/03.webp" width="941" height="1741" alt="" loading="eager" decoding="async" />
+  <img class="strip" src="./strips/04.webp" width="941" height="1781" alt="" loading="eager" decoding="async" />
+  <img class="strip" src="./strips/05.webp" width="941" height="793" alt="" loading="eager" decoding="async" />
 
   <div style="padding: 20px 16px;">
     <a href="#form" class="mid-cta-btn">免費報名說明會 →</a>
   </div>
 
-  <img class="strip" src="./strips/04.webp" width="960" height="1440" alt="" loading="eager" decoding="async" />
-  <img class="strip" src="./strips/05.webp" width="960" height="1440" alt="" loading="eager" decoding="async" />
-  <img class="strip" src="./strips/06.webp" width="960" height="1440" alt="" loading="eager" decoding="async" />
+  <img class="strip" src="./strips/06.webp" width="941" height="1879" alt="" loading="eager" decoding="async" />
+  <img class="strip" src="./strips/07.webp" width="941" height="1561" alt="" loading="eager" decoding="async" />
+  <img class="strip" src="./strips/08.webp" width="941" height="1748" alt="" loading="eager" decoding="async" />
+  <img class="strip" src="./strips/09.webp" width="941" height="1740" alt="" loading="eager" decoding="async" />
+  <img class="strip" src="./strips/10.webp" width="941" height="1072" alt="" loading="eager" decoding="async" />
 
   <div style="padding: 20px 16px;">
     <a href="#form" class="mid-cta-btn">免費報名說明會 →</a>
   </div>
 
-  <img class="strip" src="./strips/07.webp" width="960" height="1440" alt="" loading="eager" decoding="async" />
-  <img class="strip" src="./strips/08.webp" width="960" height="1440" alt="" loading="eager" decoding="async" />
-  <img class="strip" src="./strips/09.webp" width="960" height="1440" alt="" loading="eager" decoding="async" />
+  <img class="strip" src="./strips/11.webp" width="941" height="1610" alt="" loading="eager" decoding="async" />
+  <img class="strip" src="./strips/12.webp" width="941" height="1820" alt="" loading="eager" decoding="async" />
+  <img class="strip" src="./strips/13.webp" width="941" height="1729" alt="" loading="eager" decoding="async" />
+  <img class="strip" src="./strips/14.webp" width="941" height="1791" alt="" loading="eager" decoding="async" />
 
   <div style="padding: 20px 16px;">
     <a href="#form" class="mid-cta-btn">免費報名說明會 →</a>
   </div>
 
-  <img class="strip" src="./strips/10.webp" width="960" height="1440" alt="" loading="eager" decoding="async" />
+  <img class="strip" src="./strips/15.webp" width="941" height="1824" alt="" loading="eager" decoding="async" />
+  <img class="strip" src="./strips/16.webp" width="941" height="1676" alt="" loading="eager" decoding="async" />
 
-  <!-- p.11 原設計是霓虹按鈕圖，這裡做成真的可點擊按鈕（樣式沿用現有CTA風格，跟整體視覺統一），
-       文案沿用原設計「立即選擇說明會場次」 -->
   <div style="padding: 24px 16px 8px;">
     <a href="#form" class="hero-cta" style="display:block;">立即選擇說明會場次 →</a>
   </div>
@@ -1108,13 +1112,13 @@
   var strip01 = document.querySelector('.strip[src*="01"]');
   if (strip01) { strip01.dataset.pixelEvent = 'top'; observer.observe(strip01); }
 
-  // CV：滑到第五張條圖（看完內容）
-  var strip05 = document.querySelector('.strip[src*="05"]');
-  if (strip05) { strip05.dataset.pixelEvent = 'cv'; observer.observe(strip05); }
+  // CV：滑到第八張條圖（看完內容過半）
+  var strip08 = document.querySelector('.strip[src*="08"]');
+  if (strip08) { strip08.dataset.pixelEvent = 'cv'; observer.observe(strip08); }
 
-  // BOTTOM：滑到第十張條圖（看完全頁）
-  var strip10 = document.querySelector('.strip[src*="10"]');
-  if (strip10) { strip10.dataset.pixelEvent = 'bottom'; observer.observe(strip10); }
+  // BOTTOM：滑到第十六張條圖（看完全頁，16張是最後一張）
+  var strip16 = document.querySelector('.strip[src*="16"]');
+  if (strip16) { strip16.dataset.pixelEvent = 'bottom'; observer.observe(strip16); }
 
   // FORM：滑到表單區（看到問卷但未必填寫）
   var formSection = document.querySelector('.form-section');
