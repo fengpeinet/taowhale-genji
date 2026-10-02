@@ -31,7 +31,7 @@ const AI_PHONE_EXTERNAL_SHEET_ID = "15RD8rlyelrBrLIqmCgsjO9g7nD5F4Q0LYMfi9EF_Go0
 const AI_PHONE_SHEET_NAME = "AI電話";
 const COURSE_TAG = "AIGC說明會"; // 寫進 AI電話分頁 M 欄，用來區分是哪門課的名單
 
-// TODO：另一個帳號的「代寄信」腳本部署網址（見 google_apps_script_代寄信.js）。
+// 另一個帳號的「代寄信」腳本部署網址（見 google_apps_script_代寄信.js）。
 // 這裡只是把信件內容傳過去，實際寄出動作由那個帳號執行（不是轉寄，收件人看到的是正常信件），
 // 目的是讓寄信額度算在那個帳號上，不會跟舊活動搶主帳號 fengpeinet@gmail.com 的每日額度
 const MAIL_RELAY_URL = "https://script.google.com/macros/s/AKfycbyL4I-qRyr9Xn-RcxOq3xiEykB2DzocdOJjux5BUUAhdvgxAGuJwcl1vWelLGG3ABuo/exec";
@@ -531,7 +531,6 @@ function testZoomLinks() {
 }
 
 function testEmails() {
-  // TODO：ZOOM_LINKS 目前是空的（場次還沒定案），先用假連結測試信件排版，等真實場次填進去後可以改回讀 ZOOM_LINKS
   const testEmail = "fengpeinet@gmail.com";
   const testName = "測試用戶";
   const testDate = "2026/07/25 14:00";

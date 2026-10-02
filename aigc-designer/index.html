@@ -709,7 +709,6 @@
 <div class="page">
 
   <!-- ═══════════════ HERO ═══════════════ -->
-  <!-- TODO：要不要在這裡同時掛「鯨海拾貝」品牌背書（見專案總覽第三節），還是只用風霈自己的品牌，待決定 -->
   <section class="hero">
     <div class="hero-brand">
       <img src="./logo.png" alt="風霈國際傳媒" style="width:32px;height:32px;object-fit:contain;display:inline-block;vertical-align:middle;margin-right:8px;" />
@@ -947,9 +946,6 @@
   setInterval(tickCountdown, 1000);
 
   /* ── Form submit ── */
-  // TODO：這裡不能沿用舊站的 GAS 網址，那個是綁在「蝦皮AI攻略班」的 Google 試算表上，
-  // 表單會直接寫進舊活動的名單。要另外新增一個 Google 試算表 + 部署新的 Apps Script
-  // （google_apps_script.js 已經複製過來了，內容也已加上對應的 TODO），拿到新的部署網址後貼在這裡。
   var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyW15UpbmUh1rxNvXbP5fBwl9WPr21sTu5AHJOrj2LWEvh7cwrIoB9dBqkMBWRp39O9/exec';
   var form        = document.getElementById('signup-form');
   var submitBtn   = document.getElementById('submit-btn');
