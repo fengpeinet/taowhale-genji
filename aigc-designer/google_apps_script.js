@@ -11,19 +11,25 @@
 //   一、 營運設定區 (連結與圖片)
 // ==========================================
 
-// TODO：說明會場次日期/時間定案後，比照這個格式填入對應的 Zoom 連結
-// key 格式為 "月-日"（例：10-15 代表 10/15），要跟 index.html 表單 radio 的 value 對應邏輯保持一致
+// key 格式為 "月-日"（例：10-15 代表 10/15），要跟 index.html 表單 radio 的 value 對應邏輯保持一致。
+// 四場都先放這裡備用，前台 index.html 一次只顯示其中兩場，場次過了再手動切換前台顯示哪兩場
 const ZOOM_LINKS = {
-  // "10-15": { time: "20:00", url: "https://us06web.zoom.us/j/待補" },
+  "10-7": { time: "20:00", url: "https://us06web.zoom.us/j/3909390259?omn=88509412246" },
+  "10-14": { time: "20:00", url: "https://us06web.zoom.us/j/3909390259?omn=89432569323" },
+  "10-21": { time: "20:00", url: "https://us06web.zoom.us/j/3909390259?omn=81340898316" },
+  "10-28": { time: "20:00", url: "https://us06web.zoom.us/j/3909390259?omn=86535584001" },
 };
 
 const WEBINAR_URL = "https://fengpeinet.github.io/taowhale-genji/aigc-designer/";
 const REBOOK_URL = "https://fengpeinet.github.io/taowhale-genji/aigc-designer/?utm_source=facebook&utm_medium=share&ref=更換場次專用";
 
 const SHEET_NAME = "工作表1";
-// 篩選出「有填電話」的名單，供匯入 AI 電話系統用（沿用舊專案「16800 說明會報名」試算表的分頁規則）
-// 記得在試算表裡手動建立一個叫「AI電話」的分頁，欄位結構要跟工作表1完全一樣（11欄，A~K，見下方欄位對應表）
+
+// AI電話系統只能同步一份 Google Sheet，所以「有填電話」的名單不寫自己試算表的分頁，
+// 改成直接寫進 16,800 帶貨起步班那份試算表的「AI電話」分頁（兩門課共用同一份 AI電話名單）
+const AI_PHONE_EXTERNAL_SHEET_ID = "15RD8rlyelrBrLIqmCgsjO9g7nD5F4Q0LYMfi9EF_Go0";
 const AI_PHONE_SHEET_NAME = "AI電話";
+const COURSE_TAG = "AIGC說明會"; // 寫進 AI電話分頁 M 欄，用來區分是哪門課的名單
 
 // TODO：另一個帳號的「代寄信」腳本部署網址（見 google_apps_script_代寄信.js）。
 // 這裡只是把信件內容傳過去，實際寄出動作由那個帳號執行（不是轉寄，收件人看到的是正常信件），
@@ -491,19 +497,23 @@ function doPost(e) {
     // C欄=電話，寫入前先設成純文字格式，避免 Sheets 把開頭的 0 當數字吃掉（例：0912345678 → 912345678）
     sheet.getRange(lastRow, 3).setNumberFormat("@").setValue(phone);
 
-    // AI電話分頁：有電話才寫（欄位結構跟工作表1完全一樣，給 AI 電話系統匯入用）
+    // 有電話才額外寫一筆到 16,800 那份試算表的「AI電話」分頁（兩門課共用同一份 AI電話名單）
     if (phone) {
-      const aiSheet = ss.getSheetByName(AI_PHONE_SHEET_NAME);
-      if (aiSheet) {
-        aiSheet.appendRow([
-          new Date(), data.name, '', data.email,
-          data.lineId || '', data.referrer || '', data.sessionDate,
-          false, false, '', zoomUrl
-        ]);
-        const aiLastRow = aiSheet.getLastRow();
-        aiSheet.getRange(aiLastRow, 3).setNumberFormat("@").setValue(phone);
-      } else {
-        console.error("找不到分頁 [" + AI_PHONE_SHEET_NAME + "]，AI電話名單沒有同步，記得先在試算表建立這個分頁");
+      try {
+        const aiSheet = SpreadsheetApp.openById(AI_PHONE_EXTERNAL_SHEET_ID).getSheetByName(AI_PHONE_SHEET_NAME);
+        if (aiSheet) {
+          aiSheet.appendRow([
+            new Date(), data.name, '', data.email,
+            data.lineId || '', data.referrer || '', data.sessionDate,
+            false, false, '', zoomUrl, '', COURSE_TAG
+          ]);
+          const aiLastRow = aiSheet.getLastRow();
+          aiSheet.getRange(aiLastRow, 3).setNumberFormat("@").setValue(phone);
+        } else {
+          console.error("外部試算表裡找不到分頁 [" + AI_PHONE_SHEET_NAME + "]，AI電話名單沒有同步");
+        }
+      } catch (aiErr) {
+        console.error("寫入外部 AI電話 分頁失敗，不影響本次報名：" + aiErr.message);
       }
     }
 

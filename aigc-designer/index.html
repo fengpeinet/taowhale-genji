@@ -824,23 +824,18 @@
         </div>
 
         <div class="form-group">
-          <!-- TODO：場次日期/時間都是佔位值，等說明會實際場次排定後要跟 countdown 目標時間、GAS 的 ZOOM_LINKS 一起更新 -->
+          <!-- 前台一次只顯示兩場，場次過了手動刪掉這場、把下一場（照 GAS 的 ZOOM_LINKS）補上來 -->
           <span class="session-label">選擇場次<span class="req">*</span></span>
           <div class="session-options">
-            <input class="session-option" type="radio" name="sessionDate" id="s1" value="待定場次一" required />
+            <input class="session-option" type="radio" name="sessionDate" id="s1" value="2026/10/07 20:00" required />
             <label class="session-option-label" for="s1">
               <div class="session-radio-dot"><div class="session-radio-inner"></div></div>
-              第一場 &nbsp;TODO 日期時間
+              10/7（三）20:00
             </label>
-            <input class="session-option" type="radio" name="sessionDate" id="s2" value="待定場次二" />
+            <input class="session-option" type="radio" name="sessionDate" id="s2" value="2026/10/14 20:00" />
             <label class="session-option-label" for="s2">
               <div class="session-radio-dot"><div class="session-radio-inner"></div></div>
-              第二場 &nbsp;TODO 日期時間
-            </label>
-            <input class="session-option" type="radio" name="sessionDate" id="s3" value="待定場次三" />
-            <label class="session-option-label" for="s3">
-              <div class="session-radio-dot"><div class="session-radio-inner"></div></div>
-              第三場 &nbsp;TODO 日期時間
+              10/14（三）20:00
             </label>
             <input class="session-option" type="radio" name="sessionDate" id="s-no" value="no-session" />
             <label class="session-option-label session-option-label--no" for="s-no">
@@ -907,8 +902,8 @@
 (function () {
 
   /* ── Countdown ── */
-  // TODO：場次日期定案後，改成第一場說明會的實際時間
-  var target = new Date('2026-12-31T20:00:00+08:00');
+  // 對準目前前台顯示的第一場，前台換場次時這裡也要一起換
+  var target = new Date('2026-10-07T20:00:00+08:00');
 
   function pad(n) { return String(n).padStart(2, '0'); }
 
