@@ -265,28 +265,28 @@ function sendScheduledEmails() {
 // ==========================================
 
 function sendReminderEmail(to, name, displayDate, link, dayWord) {
-  const subject = `📣 ${dayWord}見！《AI設計師研修班》說明會 活動提醒`;
+  const subject = `📣 ${dayWord}見！《AIGC 廣告全案課》說明會 活動提醒`;
   const footerUrl = "https://lh3.googleusercontent.com/d/1MAo2woNkcN7-LYjjoL6ZMdlFIToLyz-s";
   const headUrl = "https://lh3.googleusercontent.com/d/1XG6Co4hBQ0r0Yk5c5Zc-I3zhHftUYt3B";
   const brandLogoUrl = "https://lh3.googleusercontent.com/d/12c_FvDGcLxbMlDR4caLLjeElunPRiOrB";
   const htmlBody = `
     <div style="font-family: 'Microsoft JhengHei', Arial, sans-serif; color: #333; line-height: 1.8; max-width: 600px; margin: 0 auto;">
 
-      <img src="${headUrl}" alt="《AI設計師研修班》說明會" style="width: 100%; max-width: 600px; display: block; border-radius: 8px; margin-bottom: 24px;">
+      <img src="${headUrl}" alt="《AIGC 廣告全案課》說明會" style="width: 100%; max-width: 600px; display: block; border-radius: 8px; margin-bottom: 24px;">
 
       <p style="margin: 0 0 8px 0;"><strong>${name}</strong> 您好：</p>
-      <p style="margin: 0 0 20px 0;">《AI設計師研修班》說明會<strong>${dayWord}</strong>就要開始囉！</p>
+      <p style="margin: 0 0 20px 0;">《AIGC 廣告全案課》說明會<strong>${dayWord}</strong>就要開始囉！</p>
 
       <!-- 活動資訊 -->
       <p style="font-weight: bold; margin: 0 0 8px 0;">✅ 活動資訊</p>
-      <p style="margin: 4px 0 4px 16px;">活動名稱：<strong>《AI設計師研修班》說明會</strong></p>
+      <p style="margin: 4px 0 4px 16px;">活動名稱：<strong>《AIGC 廣告全案課》說明會</strong></p>
       <p style="margin: 4px 0 4px 16px;">活動時間：<strong>${displayDate}</strong></p>
       <p style="margin: 4px 0 20px 16px;">活動形式：線上 Zoom</p>
 
       <!-- 你將會了解 -->
       <p style="font-weight: bold; margin: 0 0 8px 0;">✅ 這場分享會，你將會了解</p>
       <ul style="margin: 0 0 20px 0; padding-left: 20px;">
-        <!-- TODO：這四點是舊「蝦皮AI攻略班」的賣點，需換成《AI設計師研修班》的課程亮點
+        <!-- TODO：這四點是舊「蝦皮AI攻略班」的賣點，需換成《AIGC 廣告全案課》的課程亮點
              （參考專案總覽.md 第四節：AI生文/生圖/生視頻三大模塊，82節錄播＋開營直播＋4節直播課） -->
         <li style="margin-bottom: 6px;">TODO：課程亮點 1</li>
         <li style="margin-bottom: 6px;">TODO：課程亮點 2</li>
@@ -339,7 +339,7 @@ function sendReminderEmail(to, name, displayDate, link, dayWord) {
 
     </div>
   `;
-  sendViaRelay(to, subject, htmlBody, "風霈學院"); // TODO：課程正式名稱定案後可改成「風霈學院｜AI設計師研修班」之類
+  sendViaRelay(to, subject, htmlBody, "風霈學院");
 }
 
 function sendRecallEmail(to, name, nextDisplayDate, zoomLink) {
@@ -350,21 +350,21 @@ function sendRecallEmail(to, name, nextDisplayDate, zoomLink) {
   const htmlBody = `
     <div style="font-family: 'Microsoft JhengHei', Arial, sans-serif; color: #333; line-height: 1.8; max-width: 600px; margin: 0 auto;">
 
-      <img src="${headUrl}" alt="《AI設計師研修班》說明會" style="width: 100%; max-width: 600px; display: block; border-radius: 8px; margin-bottom: 24px;">
+      <img src="${headUrl}" alt="《AIGC 廣告全案課》說明會" style="width: 100%; max-width: 600px; display: block; border-radius: 8px; margin-bottom: 24px;">
 
       <p style="margin: 0 0 8px 0;"><strong>${name}</strong> 您好：</p>
-      <p style="margin: 0 0 20px 0;">嗨！你之前有報名過我們的「《AI設計師研修班》說明會」，我們還在！下一場說明會即將開始，希望這次能讓你把握機會 😊</p>
+      <p style="margin: 0 0 20px 0;">嗨！你之前有報名過我們的「《AIGC 廣告全案課》說明會」，我們還在！下一場說明會即將開始，希望這次能讓你把握機會 😊</p>
 
       <!-- 活動資訊 -->
       <p style="font-weight: bold; margin: 0 0 8px 0;">✅ 活動資訊</p>
-      <p style="margin: 4px 0 4px 16px;">活動名稱：<strong>《AI設計師研修班》說明會</strong></p>
+      <p style="margin: 4px 0 4px 16px;">活動名稱：<strong>《AIGC 廣告全案課》說明會</strong></p>
       <p style="margin: 4px 0 4px 16px;">活動時間：<strong>${nextDisplayDate}</strong></p>
       <p style="margin: 4px 0 20px 16px;">活動形式：線上 Zoom</p>
 
       <!-- 你將會了解 -->
       <p style="font-weight: bold; margin: 0 0 8px 0;">✅ 這場分享會，你將會了解</p>
       <ul style="margin: 0 0 20px 0; padding-left: 20px;">
-        <!-- TODO：這四點是舊「蝦皮AI攻略班」的賣點，需換成《AI設計師研修班》的課程亮點
+        <!-- TODO：這四點是舊「蝦皮AI攻略班」的賣點，需換成《AIGC 廣告全案課》的課程亮點
              （參考專案總覽.md 第四節：AI生文/生圖/生視頻三大模塊，82節錄播＋開營直播＋4節直播課） -->
         <li style="margin-bottom: 6px;">TODO：課程亮點 1</li>
         <li style="margin-bottom: 6px;">TODO：課程亮點 2</li>
@@ -417,26 +417,26 @@ function sendRecallEmail(to, name, nextDisplayDate, zoomLink) {
 
     </div>
   `;
-  sendViaRelay(to, subject, htmlBody, "風霈學院"); // TODO：課程正式名稱定案後可改成「風霈學院｜AI設計師研修班」之類
+  sendViaRelay(to, subject, htmlBody, "風霈學院");
 }
 
 function sendRegistrationSuccessEmail(to, name, date, zoomUrl) {
-  const subject = "✅ 您已成功報名「《AI設計師研修班》說明會」";
+  const subject = "✅ 您已成功報名「《AIGC 廣告全案課》說明會」";
   const footerUrl = "https://lh3.googleusercontent.com/d/1MAo2woNkcN7-LYjjoL6ZMdlFIToLyz-s";
   const headUrl = "https://lh3.googleusercontent.com/d/1XG6Co4hBQ0r0Yk5c5Zc-I3zhHftUYt3B";
   const brandLogoUrl = "https://lh3.googleusercontent.com/d/12c_FvDGcLxbMlDR4caLLjeElunPRiOrB";
   const htmlBody = `
     <div style="font-family: 'Microsoft JhengHei', Arial, sans-serif; color: #333; line-height: 1.8; max-width: 600px; margin: 0 auto;">
 
-      <img src="${headUrl}" alt="《AI設計師研修班》說明會" style="width: 100%; max-width: 600px; display: block; border-radius: 8px; margin-bottom: 24px;">
+      <img src="${headUrl}" alt="《AIGC 廣告全案課》說明會" style="width: 100%; max-width: 600px; display: block; border-radius: 8px; margin-bottom: 24px;">
 
       <p style="margin: 0 0 8px 0;"><strong>${name}</strong> 您好：</p>
-      <p style="margin: 0 0 20px 0;">感謝您報名 <strong>《AI設計師研修班》說明會</strong>，您的報名已成功完成！</p>
+      <p style="margin: 0 0 20px 0;">感謝您報名 <strong>《AIGC 廣告全案課》說明會</strong>，您的報名已成功完成！</p>
 
       <div style="background-color: #f9f9f9; border-left: 4px solid #c8a84b; padding: 16px 20px; border-radius: 4px; margin: 0 0 16px 0;">
         <p style="margin: 0 0 8px 0; color: #a07830; font-weight: bold;">📋 您的報名資訊</p>
         <p style="margin: 4px 0;">報名姓名：<strong>${name}</strong></p>
-        <p style="margin: 4px 0;">活動名稱：<strong>《AI設計師研修班》說明會</strong></p>
+        <p style="margin: 4px 0;">活動名稱：<strong>《AIGC 廣告全案課》說明會</strong></p>
         <p style="margin: 4px 0;">場次時間：<strong>${date}</strong></p>
       </div>
 
@@ -471,7 +471,7 @@ function sendRegistrationSuccessEmail(to, name, date, zoomUrl) {
 
     </div>
   `;
-  sendViaRelay(to, subject, htmlBody, "風霈學院"); // TODO：課程正式名稱定案後可改成「風霈學院｜AI設計師研修班」之類
+  sendViaRelay(to, subject, htmlBody, "風霈學院");
 }
 
 function doPost(e) {
