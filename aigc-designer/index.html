@@ -251,20 +251,34 @@
     .strip { display: block; width: 100%; background-color: var(--bg-page-top); }
     .section-gap { display: none; }
 
-    /* ─── Mid CTA ─── */
+    /* ─── Mid CTA：淡色底＋模糊粉/紫光暈透出 ─── */
     .mid-cta-wrap {
-      background: var(--bg-page-top);
-      padding: 16px 20px;
-      border-top: 2px solid var(--accent-pink);
+      position: relative;
+      padding: 20px 16px;
+      background: #f3edfb;
+      overflow: hidden;
     }
-    .mid-cta-label {
-      font-size: 13px;
-      color: var(--text-muted);
-      text-align: center;
-      margin-bottom: 10px;
-      letter-spacing: 0.04em;
+    .mid-cta-wrap::before,
+    .mid-cta-wrap::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(40px);
+      pointer-events: none;
+    }
+    .mid-cta-wrap::before {
+      top: -40px; left: -30px;
+      width: 180px; height: 180px;
+      background: radial-gradient(circle, rgba(211,72,205,0.45), transparent 70%);
+    }
+    .mid-cta-wrap::after {
+      bottom: -40px; right: -30px;
+      width: 180px; height: 180px;
+      background: radial-gradient(circle, rgba(168,85,247,0.4), transparent 70%);
     }
     .mid-cta-btn {
+      position: relative;
+      z-index: 1;
       display: block;
       background: var(--cta-gradient);
       color: #ffffff;
@@ -727,7 +741,7 @@
   <!-- ═══════════════ 長圖內容區（鯨海拾貝官方條圖，2026-10-02 換上，取代原本同事的v2故事條圖） ═══════════════ -->
   <!-- width/height 屬性讓瀏覽器一開始就保留版位空間，避免圖片load完才跳動（CLS），16張圖走 eager+async，
        總檔案量約2.3MB，手機4G/5G下不會有「一條一條浮出來」的感覺 -->
-  <img class="strip" src="./strips/01.webp?v=2" width="941" height="783" alt="" loading="eager" decoding="async" />
+  <img class="strip" src="./strips/01.webp?v=3" width="941" height="783" alt="" loading="eager" decoding="async" />
 
   <!-- ═══════════════ COUNTDOWN ═══════════════ -->
   <div class="countdown-bar">
@@ -755,31 +769,32 @@
     </div>
   </div>
 
-  <img class="strip" src="./strips/02.webp?v=2" width="941" height="1604" alt="" loading="eager" decoding="async" />
-  <img class="strip" src="./strips/03.webp?v=2" width="941" height="1741" alt="" loading="eager" decoding="async" />
-  <img class="strip" src="./strips/04.webp?v=2" width="941" height="1781" alt="" loading="eager" decoding="async" />
-  <img class="strip" src="./strips/05.webp?v=2" width="941" height="793" alt="" loading="eager" decoding="async" />
+  <img class="strip" src="./strips/02.webp?v=3" width="941" height="1604" alt="" loading="eager" decoding="async" />
+  <img class="strip" src="./strips/03.webp?v=3" width="941" height="1741" alt="" loading="eager" decoding="async" />
+  <img class="strip" src="./strips/04.webp?v=3" width="941" height="1781" alt="" loading="eager" decoding="async" />
+  <img class="strip" src="./strips/05.webp?v=3" width="941" height="793" alt="" loading="eager" decoding="async" />
 
-  <div style="padding: 20px 16px; background: #2b01c0;">
+  <div class="mid-cta-wrap">
     <a href="#form" class="mid-cta-btn">免費報名說明會 →</a>
   </div>
 
-  <img class="strip" src="./strips/06.webp?v=2" width="941" height="1879" alt="" loading="eager" decoding="async" />
-  <img class="strip" src="./strips/07.webp?v=2" width="941" height="1561" alt="" loading="eager" decoding="async" />
-  <img class="strip" src="./strips/08.webp?v=2" width="941" height="1748" alt="" loading="eager" decoding="async" />
-  <img class="strip" src="./strips/09.webp?v=2" width="941" height="1740" alt="" loading="eager" decoding="async" />
-  <img class="strip" src="./strips/10.webp?v=2" width="941" height="1072" alt="" loading="eager" decoding="async" />
-  <img class="strip" src="./strips/11.webp?v=2" width="941" height="1610" alt="" loading="eager" decoding="async" />
-  <img class="strip" src="./strips/12.webp?v=2" width="941" height="1820" alt="" loading="eager" decoding="async" />
-  <img class="strip" src="./strips/13.webp?v=2" width="941" height="1729" alt="" loading="eager" decoding="async" />
+  <img class="strip" src="./strips/06.webp?v=3" width="941" height="1879" alt="" loading="eager" decoding="async" />
+  <img class="strip" src="./strips/07.webp?v=3" width="941" height="1561" alt="" loading="eager" decoding="async" />
+  <img class="strip" src="./strips/08.webp?v=3" width="941" height="1748" alt="" loading="eager" decoding="async" />
+  <img class="strip" src="./strips/09.webp?v=3" width="941" height="1740" alt="" loading="eager" decoding="async" />
+  <img class="strip" src="./strips/10.webp?v=3" width="941" height="1072" alt="" loading="eager" decoding="async" />
+  <img class="strip" src="./strips/11.webp?v=3" width="941" height="1610" alt="" loading="eager" decoding="async" />
+  <img class="strip" src="./strips/12.webp?v=3" width="941" height="1820" alt="" loading="eager" decoding="async" />
+  <img class="strip" src="./strips/13.webp?v=3" width="941" height="275" alt="" loading="eager" decoding="async" />
 
-  <div style="padding: 20px 16px; background: #2b01c0;">
+  <div class="mid-cta-wrap">
     <a href="#form" class="mid-cta-btn">免費報名說明會 →</a>
   </div>
 
-  <img class="strip" src="./strips/14.webp?v=2" width="941" height="1791" alt="" loading="eager" decoding="async" />
-  <img class="strip" src="./strips/15.webp?v=2" width="941" height="1824" alt="" loading="eager" decoding="async" />
-  <img class="strip" src="./strips/16.webp?v=2" width="941" height="1676" alt="" loading="eager" decoding="async" />
+  <img class="strip" src="./strips/14.webp?v=3" width="941" height="1402" alt="" loading="eager" decoding="async" />
+  <img class="strip" src="./strips/15.webp?v=3" width="941" height="1791" alt="" loading="eager" decoding="async" />
+  <img class="strip" src="./strips/16.webp?v=3" width="941" height="1824" alt="" loading="eager" decoding="async" />
+  <img class="strip" src="./strips/17.webp?v=3" width="941" height="1676" alt="" loading="eager" decoding="async" />
 
   <div style="padding: 24px 16px 8px;">
     <a href="#form" class="hero-cta" style="display:block;">立即選擇說明會場次 →</a>
@@ -1112,9 +1127,9 @@
   var strip08 = document.querySelector('.strip[src*="08"]');
   if (strip08) { strip08.dataset.pixelEvent = 'cv'; observer.observe(strip08); }
 
-  // BOTTOM：滑到第十六張條圖（看完全頁，16張是最後一張）
-  var strip16 = document.querySelector('.strip[src*="16"]');
-  if (strip16) { strip16.dataset.pixelEvent = 'bottom'; observer.observe(strip16); }
+  // BOTTOM：滑到第十七張條圖（看完全頁，17張是最後一張）
+  var strip17 = document.querySelector('.strip[src*="17"]');
+  if (strip17) { strip17.dataset.pixelEvent = 'bottom'; observer.observe(strip17); }
 
   // FORM：滑到表單區（看到問卷但未必填寫）
   var formSection = document.querySelector('.form-section');
